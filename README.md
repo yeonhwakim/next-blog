@@ -1,34 +1,97 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Blog
 
-## Getting Started
+### todo list
 
-First, run the development server:
+#### layout
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- heaer
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  - 로고
+    - 홈으로 이동
+  - 메뉴
+    - home
+    - about
+    - posts
+    - contact
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- footer
+  - copyright notice
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+#### home manu page layout
 
-## Learn More
+- profile
 
-To learn more about Next.js, take a look at the following resources:
+  - 프로필 사진
+  - 이름
+  - 포지션
+  - 소개
+  - 컨텍 버튼
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 각각 메뉴의 해당하는 page
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+#### home menu page
 
-## Deploy on Vercel
+- home
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  - featured posts
+    - 좋아요 누른 포스트
+    - 각각의 포스트
+      - 썸네일
+      - 제목
+      - 날짜
+      - 설명
+  - you may like
+    - 좋아요 제외 모든 포스트
+    - 각각의 포스트
+      - 썸네일
+      - 제목
+      - 날짜
+      - 설명
+    - carousel 기능
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- about
+
+  - profile
+    - 프로필 사진
+    - 이름
+    - 포지션
+    - 소개
+    - 컨텍 버튼
+  - 상세
+    - who am I?
+    - career
+    - skills
+
+- posts
+
+  - 카테고리 메뉴
+    - 젠체 포스트
+    - 나머지 카테고리
+  - 카테고리에 따라 필터링 되는 포스트
+    - 썸네일
+    - 제목
+    - 날짜
+    - 설명
+
+- contact
+
+  - 트위터, 유튜브, 페이스북등 sns 링크
+  - 이메일
+    - 이메일
+    - 제목
+    - 내용
+    - 이메일 보내기 버튼
+    - 실제 이메일 보내기
+
+#### post detail page
+
+- 레이아웃
+
+  - 이미지
+  - 날짜
+  - 제목
+  - 설명
+  - 내용
+    - 마크다운, 본문내용 스타일링
+
+- 이전, 다음 포스트
