@@ -1,4 +1,22 @@
 import Link from "next/link";
+const menus = [
+  {
+    pathName: "home",
+    path: "/",
+  },
+  {
+    pathName: "about",
+    path: "/about",
+  },
+  {
+    pathName: "posts",
+    path: "/posts",
+  },
+  {
+    pathName: "contact",
+    path: "/contact",
+  },
+];
 
 export default function header() {
   return (
@@ -7,18 +25,11 @@ export default function header() {
         _YEONHWA_BLOG_
       </Link>
       <nav className="flex gap-3">
-        <Link href="/" className="text-lg">
-          home
-        </Link>
-        <Link href="/about" className="text-lg">
-          about
-        </Link>
-        <Link href="/posts" className="text-lg">
-          posts
-        </Link>
-        <Link href="/contact" className="text-lg">
-          contact
-        </Link>
+        {menus.map(({ pathName, path }) => (
+          <Link href={path} className="text-lg" key={path}>
+            {pathName}
+          </Link>
+        ))}
       </nav>
     </div>
   );
