@@ -1,5 +1,9 @@
-import Image from "next/image";
+import UserProfile from "@/components/profile";
 
 export default function Home() {
-  return <div>home</div>;
+  return (
+    <div>
+      <UserProfile />
+    </div>
+  );
 }
