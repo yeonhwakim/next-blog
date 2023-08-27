@@ -1,0 +1,12 @@
+{
+  "name": "yeonhwa",
+  "image": "/profile.png",
+  "position": "front-end",
+  "introduction": "안녕하세요, 만 5년차 front-end 개발자 입니다.",
+  "description": "<div><p>who am I?</p><p>career</p><p>skills</p></div>",
+  "contact": [
+    { "sns": "youtube", "link": "", "image": "" },
+    { "sns": "twitter", "link": "", "image": "" },
+    { "sns": "facebook", "link": "", "image": "" }
+  ]
+}
