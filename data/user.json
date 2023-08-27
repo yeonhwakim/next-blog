@@ -3,7 +3,7 @@
   "image": "/profile.png",
   "position": "front-end",
   "introduction": "안녕하세요, 만 5년차 front-end 개발자 입니다.",
-  "description": "<div><p>who am I?</p><p>career</p><p>skills</p></div>",
+  "description": "<div><p class='font-bold text-lg'>who am I?</p><span class='text-md'>매일 성장하는 개발자 김연화입니다.</span><p class='font-bold text-lg'>career</p><span class='text-md'>GC케어 / 로움아이티</span><p class='font-bold text-lg'>skills</p><span class='text-md'>JAVASCRIPT / REACT / VUE</span></div>",
   "contact": [
     { "sns": "youtube", "link": "", "image": "" },
     { "sns": "twitter", "link": "", "image": "" },
