@@ -3,7 +3,7 @@ import UserProfile from "@/components/profile";
 export default function Home() {
   return (
     <div>
-      <UserProfile />
+      <UserProfile isAbout={false} />
     </div>
   );
 }
