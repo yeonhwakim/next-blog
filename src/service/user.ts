@@ -7,6 +7,7 @@ export type User = {
   position: string;
   introduction: string;
   description: string;
+  email: string;
   contact: any;
 };
 
