@@ -17,17 +17,19 @@ export default async function page() {
   const { email, contact } = user;
 
   return (
-    <div>
-      <p>Contact me</p>
-      <p>{email}</p>
-      <ul>
+    <div className="p-4 text-center">
+      <p className="text-2xl font-bold">Contact me</p>
+      <p className="mb-2 text-sm">{email}</p>
+      <ul className="flex items-center justify-center gap-4">
         {contact.map((item: any) => (
-          <li key={item.sns}>{icons[item.sns]}</li>
+          <li className="text-3xl" key={item.sns}>
+            {icons[item.sns]}
+          </li>
         ))}
       </ul>
-      <p>Or send me an email</p>
-      <div>
-        <form action="">
+      <p className="my-8 text-2xl font-bold">Or send me an email</p>
+      <div className="w-6/12 m-auto">
+        <form className="flex flex-col items-start" action="">
           <label>Your Email</label>
           <input type="email" />
           <label>Subject</label>
