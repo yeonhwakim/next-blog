@@ -2,11 +2,7 @@
 
 import { useState } from "react";
 
-export type EmailProps = {
-  sendEmailhandler: any;
-};
-
-export default function Email({ sendEmailhandler }: EmailProps) {
+export default function Email() {
   const initialInputValues: { [key: string]: string } = {
     email: "",
     subject: "",
@@ -23,12 +19,7 @@ export default function Email({ sendEmailhandler }: EmailProps) {
 
   return (
     <div className="w-6/12 m-auto rounded-md bg-emerald-600 p-4">
-      <form
-        className="flex flex-col items-start"
-        onSubmit={(e) =>
-          sendEmailhandler({ event: e, email, subject, message })
-        }
-      >
+      <form className="flex flex-col items-start">
         <label className="font-bold text-white">Your Email</label>
         <input
           className="w-full p-1 my-2 outline-0"
