@@ -8,7 +8,7 @@ type PostsProps = {
 export default async function BasicPosts({ posts }: PostsProps) {
   return (
     <>
-      <ul>
+      <ul className="grid grid-cols-4 gap-2">
         <PostItem posts={posts} />
       </ul>
     </>
