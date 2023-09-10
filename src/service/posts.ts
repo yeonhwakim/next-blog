@@ -27,3 +27,9 @@ export async function getPostsByFeatured(isFeatured: boolean): Promise<Post[]> {
   const postsByFeatured = posts.filter((post) => post.featured === isFeatured);
   return postsByFeatured;
 }
+
+export async function getDetailPosts(detailPath: string): Promise<any> {
+  const filePath = path.join(process.cwd(), "data/posts", `${detailPath}.md`);
+  const data = await fs.readFile(filePath, "utf-8");
+  return data;
+}
