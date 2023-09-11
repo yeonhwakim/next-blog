@@ -15,7 +15,7 @@ export default async function UserProfile({ isAbout }: UserProfileProps) {
   const { image, name, position, introduction, description } = user;
 
   return (
-    <div className="w-full flex flex-col items-center justify-center">
+    <section className="w-full flex flex-col items-center justify-center">
       <Image
         src={image}
         alt={name}
@@ -23,8 +23,8 @@ export default async function UserProfile({ isAbout }: UserProfileProps) {
         height={170}
         className="rounded-full"
       />
-      <p className="mt-2 font-bold text-lg">{name}</p>
-      <p className="font-semibold text-md">{position}</p>
+      <h2 className="mt-2 font-bold text-lg">{name}</h2>
+      <h3 className="font-semibold text-md">{position}</h3>
       <p className="bg-yellow text-sm">{introduction}</p>
       <button className="mt-2 py-1 px-3 bg-yellow-300 rounded-md text-sm font-semibold">
         contact me!
@@ -35,6 +35,6 @@ export default async function UserProfile({ isAbout }: UserProfileProps) {
           dangerouslySetInnerHTML={{ __html: description }}
         ></div>
       )}
-    </div>
+    </section>
   );
 }
