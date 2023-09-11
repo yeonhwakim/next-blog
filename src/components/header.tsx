@@ -21,10 +21,10 @@ const menus = [
 export default function header() {
   return (
     <header className="p-4 flex item-center justify-between">
-      <Link href="/" className="text-xl font-bold">
-        <h1>_YEONHWA_BLOG_</h1>
+      <Link href="/">
+        <h1 className="text-xl font-bold">_YEONHWA_BLOG_</h1>
       </Link>
-      <nav className="flex gap-3">
+      <nav className="flex gap-4">
         {menus.map(({ pathName, path }) => (
           <Link href={path} className="text-lg" key={path}>
             {pathName}
