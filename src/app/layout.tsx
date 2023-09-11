@@ -19,9 +19,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={`${
+          inter.className
+        } ${"flex flex-col w-full max-w-screen-2xl mx-auto"}`}
+      >
         <Header />
-        {children}
+        <main className="grow">{children}</main>
         <Footer />
       </body>
     </html>
