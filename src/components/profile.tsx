@@ -23,6 +23,7 @@ export default async function UserProfile({ isAbout }: UserProfileProps) {
         width={170}
         height={170}
         className="rounded-full"
+        priority
       />
       <h2 className="mt-2 font-bold text-lg">{name}</h2>
       <h3 className="font-semibold text-md">{position}</h3>
