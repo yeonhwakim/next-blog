@@ -20,9 +20,9 @@ const menus = [
 
 export default function header() {
   return (
-    <div className="p-4 flex item-center justify-between">
+    <header className="p-4 flex item-center justify-between">
       <Link href="/" className="text-xl font-bold">
-        _YEONHWA_BLOG_
+        <h1>_YEONHWA_BLOG_</h1>
       </Link>
       <nav className="flex gap-3">
         {menus.map(({ pathName, path }) => (
@@ -31,6 +31,6 @@ export default function header() {
           </Link>
         ))}
       </nav>
-    </div>
+    </header>
   );
 }
