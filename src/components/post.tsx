@@ -1,33 +1,40 @@
 import { Post } from "@/service/posts";
 import Image from "next/image";
+import Link from "next/link";
 
 type PostPsops = {
-  posts: Post[];
+  post: Post;
 };
 
-export default async function PostItem({ posts }: PostPsops) {
+export default async function PostItem({ post }: PostPsops) {
+  if (!post) {
+    return;
+  }
+
+  const { title, description, date, category, path } = post;
+
   return (
     <>
-      {posts.map(({ title, description, date, category, path }) => (
-        <li key={title} className="w-65 drop-shadow-md">
-          <Image
-            src={`/images/posts/${path}.png`}
-            alt={title}
-            width={500}
-            height={500}
-          />
-          <div className="p-2">
-            <p className="text-right mb-2 text-xs">{date}</p>
-            <div className="text-center text-sm">
-              <p className="font-bold text-sm">{title}</p>
-              <p className="text-sm my-1">{description}</p>
-              <span className="text-xs px-3 py-1 rounded-full bg-yellow-200">
+      <li>
+        <Link href={`/posts/${path}`}>
+          <article className="rounded-md overflow-hidden shadow-lg">
+            <Image
+              src={`/images/posts/${path}.png`}
+              alt={title}
+              width={500}
+              height={500}
+            />
+            <div className="flex flex-col items-center p-4">
+              <time className="mb-2 text-sm self-end">{date}</time>
+              <h3 className="text-center text-lg font-bold">{title}</h3>
+              <p className="w-full truncate text-center my-1">{description}</p>
+              <span className="text-center text-xs px-3 py-1 mt-1 rounded-lg bg-yellow-200">
                 {category}
               </span>
             </div>
-          </div>
-        </li>
-      ))}
+          </article>
+        </Link>
+      </li>
     </>
   );
 }
