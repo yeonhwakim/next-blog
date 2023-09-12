@@ -15,25 +15,25 @@ export default async function PostItem({ post }: PostPsops) {
 
   return (
     <>
-      <li className="w-65 drop-shadow-md">
-        <article>
-          <Link href={`/posts/${path}`}>
+      <li>
+        <Link href={`/posts/${path}`}>
+          <article className="rounded-md overflow-hidden shadow-lg">
             <Image
               src={`/images/posts/${path}.png`}
               alt={title}
               width={500}
               height={500}
             />
-            <div className="p-2">
-              <time className="text-right mb-2 text-xs">{date}</time>
-              <h3 className="font-bold text-sm">{title}</h3>
-              <p className="text-sm my-1">{description}</p>
-              <span className="text-xs px-3 py-1 rounded-full bg-yellow-200">
+            <div className="flex flex-col items-center p-4">
+              <time className="mb-2 text-sm self-end">{date}</time>
+              <h3 className="text-center text-lg font-bold">{title}</h3>
+              <p className="w-full truncate text-center my-1">{description}</p>
+              <span className="text-center text-xs px-3 py-1 mt-1 rounded-lg bg-yellow-200">
                 {category}
               </span>
             </div>
-          </Link>
-        </article>
+          </article>
+        </Link>
       </li>
     </>
   );
