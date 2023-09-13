@@ -10,7 +10,9 @@ export default async function BasicPosts({ posts }: PostsProps) {
     <>
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
         {posts.map((post) => (
-          <PostItem key={post.path} post={post} />
+          <li key={post.path}>
+            <PostItem post={post} />
+          </li>
         ))}
       </ul>
     </>
