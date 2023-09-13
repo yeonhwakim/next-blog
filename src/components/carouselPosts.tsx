@@ -1,5 +1,6 @@
 import { Post } from "@/service/posts";
 import PostItem from "./post";
+import MultiCarousel from "./MultiCarousel";
 
 type PostsProps = {
   posts: Post[];
@@ -7,10 +8,12 @@ type PostsProps = {
 
 export default async function CarouselPosts({ posts }: PostsProps) {
   return (
-    <>
-      <ul className="flex flex-nowrap gap-2 overflow-auto">
-        <PostItem posts={posts} />
-      </ul>
-    </>
+    <MultiCarousel>
+      {posts.map((post) => (
+        <li key={post.path}>
+          <PostItem post={post} />
+        </li>
+      ))}
+    </MultiCarousel>
   );
 }
