@@ -10,6 +10,8 @@ export type Post = {
   featured: boolean;
 };
 
+type postData = Post & { content: string };
+
 export async function getPosts(): Promise<Post[]> {
   const filePath = path.join(process.cwd(), "data", "posts.json");
   const data = await fs.readFile(filePath, "utf-8");
@@ -30,8 +32,16 @@ export async function getPostsByFeatured(isFeatured: boolean): Promise<Post[]> {
   return postsByFeatured;
 }
 
-export async function getDetailPosts(detailPath: string): Promise<any> {
-  const filePath = path.join(process.cwd(), "data/posts", `${detailPath}.md`);
-  const data = await fs.readFile(filePath, "utf-8");
-  return data;
+export async function getDetailPosts(detailPath: string): Promise<postData> {
+  const filePath = path.join(
+    process.cwd(),
+    "data",
+    "posts",
+    `${detailPath}.md`
+  );
+  const allPosts = await getPosts();
+  const metaData = allPosts.find((post) => post.path === detailPath);
+  if (!metaData) throw new Error(`${detailPath}에 해당하는 파일이 없습니다.`);
+  const content = await fs.readFile(filePath, "utf-8");
+  return { ...metaData, content };
 }
