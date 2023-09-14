@@ -22,13 +22,13 @@ export default function FilterablePosts({
       : posts.filter((post) => post.category === selected);
 
   return (
-    <>
+    <section className="flex">
       <BasicPosts posts={filteredPosts} />
       <Category
         selected={selected}
         categories={[All_POSTS, ...categories]}
         onClick={setSelected}
       />
-    </>
+    </section>
   );
 }
