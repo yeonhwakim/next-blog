@@ -6,7 +6,7 @@ type PostPsops = {
   post: Post;
 };
 
-export default async function PostItem({ post }: PostPsops) {
+export default function PostItem({ post }: PostPsops) {
   if (!post) {
     return;
   }
