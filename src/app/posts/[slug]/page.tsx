@@ -7,22 +7,12 @@ type Props = {
 };
 
 export default async function PostDetail({ params: { slug } }: Props) {
-  const posts = await getDetailPosts(slug);
-
-  const markup = () => {
-    return { __html: posts };
-  };
+  const { title, content } = await getDetailPosts(slug);
 
   return (
-    <>
-      <div dangerouslySetInnerHTML={markup()}></div>
-    </>
+    <section>
+      <p>{title}</p>
+      <pre>{content}</pre>
+    </section>
   );
-}
-
-// SSG
-export async function generateStaticParams() {
-  const posts = await getPosts();
-
-  return posts.map((post) => ({ slug: post.path }));
 }
