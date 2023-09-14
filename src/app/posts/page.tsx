@@ -1,10 +1,9 @@
 import BasicPosts from "@/components/basicPosts";
 import { getPosts } from "@/service/posts";
 
-const categories = ["all posts", "my story", "javascript", "backend"];
-
 export default async function page() {
   const posts = await getPosts();
+  const categories = [...new Set(posts.map((post) => post.category))];
 
   return (
     <div className="flex flex-row">
