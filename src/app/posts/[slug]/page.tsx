@@ -1,3 +1,4 @@
+import MarkdownViewer from "@/components/MarkdownViewer";
 import { getDetailPosts, getPosts } from "@/service/posts";
 
 type Props = {
@@ -12,7 +13,7 @@ export default async function PostDetail({ params: { slug } }: Props) {
   return (
     <section>
       <p>{title}</p>
-      <pre>{content}</pre>
+      <MarkdownViewer content={content} />
     </section>
   );
 }
