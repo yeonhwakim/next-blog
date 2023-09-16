@@ -10,7 +10,7 @@ export type Post = {
   featured: boolean;
 };
 
-type postData = Post & { content: string };
+export type PostData = Post & { content: string };
 
 export async function getPosts(): Promise<Post[]> {
   const filePath = path.join(process.cwd(), "data", "posts.json");
@@ -32,7 +32,7 @@ export async function getPostsByFeatured(isFeatured: boolean): Promise<Post[]> {
   return postsByFeatured;
 }
 
-export async function getDetailPosts(detailPath: string): Promise<postData> {
+export async function getDetailPosts(detailPath: string): Promise<PostData> {
   const filePath = path.join(
     process.cwd(),
     "data",
