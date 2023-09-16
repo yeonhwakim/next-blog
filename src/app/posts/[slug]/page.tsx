@@ -10,8 +10,7 @@ type Props = {
 
 export default async function PostDetail({ params: { slug } }: Props) {
   const post = await getDetailPosts(slug);
-  const { title, path } = post;
-
+  const { title, path, prev, next } = post;
   return (
     <article className="rounded-2xl overflow-hidden bg-gray-100 shadow-lg m-4">
       <Image
@@ -22,6 +21,10 @@ export default async function PostDetail({ params: { slug } }: Props) {
         height={420}
       />
       <PostContent post={post} />
+      <section>
+        {prev && <p>{prev.title}</p>}
+        {next && <p>{next.title}</p>}
+      </section>
     </article>
   );
 }
