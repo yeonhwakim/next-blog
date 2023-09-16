@@ -22,7 +22,7 @@ export default async function PostDetail({ params: { slug } }: Props) {
         height={420}
       />
       <PostContent post={post} />
-      <section>
+      <section className="flex w-full shadow-mg">
         {prev && <AdjacentPostCard post={prev} type="prev" />}
         {next && <AdjacentPostCard post={next} type="next" />}
       </section>
