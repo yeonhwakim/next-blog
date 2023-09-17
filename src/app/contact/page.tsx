@@ -23,9 +23,15 @@ export default async function page() {
       <p className="mb-2 text-sm">{email}</p>
       <ul className="flex items-center justify-center gap-4">
         {contact.map((item: any) => (
-          <li className="text-3xl" key={item.sns}>
+          <a
+            className="text-3xl hover:text-yellow-400"
+            key={item.sns}
+            target="_blank"
+            rel="noreferrer"
+            href={item.link}
+          >
             {icons[item.sns]}
-          </li>
+          </a>
         ))}
       </ul>
       <p className="my-8 text-2xl font-bold">Or send me an email</p>

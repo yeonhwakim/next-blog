@@ -6,8 +6,12 @@
   "description": "<div><p class='font-bold text-lg'>who am I?</p><span class='text-md'>매일 성장하는 개발자 김연화입니다.</span><p class='font-bold text-lg'>career</p><span class='text-md'>GC케어 / 로움아이티</span><p class='font-bold text-lg'>skills</p><span class='text-md'>JAVASCRIPT / REACT / VUE</span></div>",
   "email": "yeonhwa6717@gmail.com",
   "contact": [
-    { "sns": "git", "link": "", "image": "" },
-    { "sns": "linkedIn", "link": "", "image": "" },
-    { "sns": "facebook", "link": "", "image": "" }
+    { "sns": "git", "link": "https://github.com/yeonhwakim", "image": "" },
+    {
+      "sns": "linkedIn",
+      "link": "https://www.linkedin.com/feed/",
+      "image": ""
+    },
+    { "sns": "facebook", "link": "https://www.youtube.com/", "image": "" }
   ]
 }
