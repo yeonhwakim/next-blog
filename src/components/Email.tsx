@@ -2,6 +2,7 @@
 
 import { ChangeEvent, FormEvent, useState } from "react";
 import Banner, { BannerProps } from "./Banner";
+import { sendContactEmail } from "@/service/contact";
 
 type Email = {
   from: string;
@@ -9,12 +10,14 @@ type Email = {
   message: string;
 };
 
+const DefaultEmailData = {
+  from: "",
+  subject: "",
+  message: "",
+};
+
 export default function Email() {
-  const [form, setForm] = useState<Email>({
-    from: "",
-    subject: "",
-    message: "",
-  });
+  const [form, setForm] = useState<Email>(DefaultEmailData);
   const [banner, setBanner] = useState<BannerProps | null>(null);
 
   const { from, subject, message } = form;
@@ -26,11 +29,19 @@ export default function Email() {
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(form);
-    setBanner({ message: "성공!!", state: "success" });
-    setTimeout(() => {
-      setBanner(null);
-    }, 3000);
+    sendContactEmail(form)
+      .then(() => {
+        setBanner({ message: "성공!!", state: "success" });
+        setForm(DefaultEmailData);
+      })
+      .catch(() => {
+        setBanner({ message: "실패!!", state: "error" });
+      })
+      .finally(() => {
+        setTimeout(() => {
+          setBanner(null);
+        }, 3000);
+      });
   };
 
   return (
