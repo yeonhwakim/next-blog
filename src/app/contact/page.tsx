@@ -1,6 +1,12 @@
 import Email from "@/components/Email";
 import { getUser } from "@/service/user";
+import { Metadata } from "next";
 import { BsGithub, BsLinkedin, BsFacebook } from "react-icons/bs";
+
+export const metadata: Metadata = {
+  title: "Contact Me",
+  description: "연화에게 메일을 보내주세요!",
+};
 
 const icons: { [key: string]: any } = {
   git: <BsGithub />,
