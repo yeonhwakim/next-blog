@@ -1,5 +1,6 @@
 import path from "path";
 import { promises as fs } from "fs";
+import { cache } from "react";
 
 export type Post = {
   title: string;
@@ -16,13 +17,15 @@ export type PostData = Post & {
   prev: Post | null;
 };
 
-export async function getPosts(): Promise<Post[]> {
+export const getPosts = cache(async () => {
   const filePath = path.join(process.cwd(), "data", "posts.json");
   const data = await fs.readFile(filePath, "utf-8");
-  return JSON.parse(data).sort((a: { date: string }, b: { date: string }) =>
-    a.date > b.date ? -1 : 1
+  return <Post[]>(
+    JSON.parse(data).sort((a: { date: string }, b: { date: string }) =>
+      a.date > b.date ? -1 : 1
+    )
   );
-}
+});
 
 export async function getPostsByCategory(category: string): Promise<Post[]> {
   const posts = await getPosts();
